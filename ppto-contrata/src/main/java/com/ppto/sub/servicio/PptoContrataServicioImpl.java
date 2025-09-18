@@ -50,6 +50,16 @@ public class PptoContrataServicioImpl implements PptoContrataServicio {
         pptoContrataRepositorio.delete(pptoContrata);
     }
 
+    @Override
+    public List<PptoContrataDto> findByPptoOrigenId(Long id) {
+
+        List<PptoContrata> pptoContratas = pptoContrataRepositorio.findByPptoOrigenId(id);
+
+        return pptoContratas.stream()
+                .map(pptoContrataMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
     private PptoContrata existsById(Long id){
         return pptoContrataRepositorio.findById(id)
                 .orElseThrow(()-> new RuntimeException("No existe el ppto con el ID: "+ id));

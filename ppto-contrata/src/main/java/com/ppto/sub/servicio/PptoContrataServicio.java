@@ -15,4 +15,6 @@ public interface PptoContrataServicio {
     PptoContrataDto updateById (PptoContrataDto pptoContrataDto, Long id);
 
     void deleteById (Long id);
+
+    List<PptoContrataDto> findByPptoOrigenId (Long id);
 }

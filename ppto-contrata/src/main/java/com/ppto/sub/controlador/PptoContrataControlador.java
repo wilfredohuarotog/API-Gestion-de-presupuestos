@@ -44,4 +44,10 @@ public class PptoContrataControlador {
         pptoContrataServicio.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping ("/p-origen/{id}")
+    public ResponseEntity<List<PptoContrataDto>> findByPptoOrigenId (@PathVariable Long id){
+        return ResponseEntity.ok(pptoContrataServicio.findByPptoOrigenId(id));
+    }
+
 }

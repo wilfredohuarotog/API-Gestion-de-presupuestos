@@ -23,3 +23,13 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      pptoContrataClient:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s

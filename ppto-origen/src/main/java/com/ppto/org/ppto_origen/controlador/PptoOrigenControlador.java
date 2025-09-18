@@ -1,5 +1,6 @@
 package com.ppto.org.ppto_origen.controlador;
 
+import com.ppto.org.ppto_origen.dto.PptoContrataDto;
 import com.ppto.org.ppto_origen.dto.PptoOrigenDto;
 import com.ppto.org.ppto_origen.servicio.PptoOrigenServicio;
 import lombok.RequiredArgsConstructor;
@@ -43,5 +44,10 @@ public class PptoOrigenControlador {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         pptoOrigenServicio.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/p-contrata/{id}")
+    public ResponseEntity<List<PptoContrataDto>> findAllPptoContrataById (@PathVariable Long id){
+        return ResponseEntity.ok(pptoOrigenServicio.findAllPptoContrataById(id));
     }
 }
