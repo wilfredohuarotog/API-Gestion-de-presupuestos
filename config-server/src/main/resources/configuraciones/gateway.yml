@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: ppto-contrata
+              uri: 'http://localhost:8081'
+              predicates:
+                - Path=/api/v1/p-contrata/**
+            - id: ppto-origen
+              uri: 'http://localhost:8082'
+              predicates:
+                - Path=/api/v1/p-origen/**

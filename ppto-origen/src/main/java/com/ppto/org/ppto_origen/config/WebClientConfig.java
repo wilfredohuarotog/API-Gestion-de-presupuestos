@@ -11,7 +11,7 @@ public class WebClientConfig {
     public WebClient webClient (){
 
         return WebClient.builder()
-                .baseUrl("http://localhost:8081/api/v1/p-contrata")
+                .baseUrl("http://localhost:8080/api/v1/p-contrata")
                 .build();
     }
 

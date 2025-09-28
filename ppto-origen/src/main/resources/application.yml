@@ -1,35 +1,5 @@
-server:
-  port: 8082
-
 spring:
   application:
     name: ppto-origen
   config:
     import: optional:configserver:http://localhost:8888
-  datasource:
-    url: jdbc:postgresql://localhost:5432/ppto_origen_db
-    username: postgres
-    password: root1234
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: 'create-drop'
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      pptoContrataClient:
-        registerHealthIndicator: true
-        slidingWindowSize: 5
-        minimumNumberOfCalls: 5
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
