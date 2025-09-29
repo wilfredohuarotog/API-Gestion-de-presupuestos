@@ -33,6 +33,8 @@ graph TD
     contrata --> config
     origen --> config
     eureka --> config
+    contrata --> eureka
+    origen --> eureka
 ```
 
 
