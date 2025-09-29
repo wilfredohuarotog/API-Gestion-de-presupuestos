@@ -17,7 +17,8 @@ Microservicios desarrollados con Spring Boot, Spring Data JPA y Spring Cloud, qu
 - Eureka Server para el registro de microservicios. 
 - Config Server para centralizar la configuración de los microservicios.
 - Api Gateway para el enrutamiento de las solicitudes.
-- Patrón Cirkuit Break para mitigar fallas en la comunicación entre microservicios.
+- Patrón Circuit Breaker implementado para mitigar fallas en la comunicación entre microservicios, 
+  evitando sobrecargar servicios que están temporalmente inactivos o con errores.
 
 ## Arquitectura
 
