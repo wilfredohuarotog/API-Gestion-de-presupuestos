@@ -19,6 +19,9 @@ Microservicios desarrollados con Spring Boot, Spring Data JPA y Spring Cloud, qu
 - Api Gateway para el enrutamiento de las solicitudes.
 - Patrón Cirkuit Break para mitigar fallas en la comunicación entre microservicios.
 
+## Arquitectura
+
+```mermaid
 graph TD
     user[👤 Usuario] --> gateway[🌐 API Gateway]
 
@@ -31,6 +34,7 @@ graph TD
     origen --> postgres[(🗄️ PostgreSQL DB)]
     contrata --> config
     origen --> config
+```
 
 
 ## Ejecución del proyecto
