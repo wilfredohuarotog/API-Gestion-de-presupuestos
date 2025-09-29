@@ -37,6 +37,32 @@ graph TD
     origen --> eureka
 ```
 
+```mermaid
+flowchart TD
+    user([👤 Usuario]) --> gateway[🌐 API Gateway]
+
+    subgraph Microservicios
+        contrata[📦 ppto_contrata]
+        origen[📦 ppto_origen]
+        eureka[🔎 Eureka Server]
+        config[⚙️ Config Server]
+    end
+
+    subgraph Bases de Datos
+        mysql[(🗄️ MySQL DB)]
+        postgres[(🗄️ PostgreSQL DB)]
+    end
+
+    gateway --> contrata
+    gateway --> origen
+    gateway --> eureka
+    gateway --> config
+
+    contrata --> mysql
+    origen --> postgres
+    contrata --> config
+    origen --> config
+```
 
 ## Ejecución del proyecto
 
