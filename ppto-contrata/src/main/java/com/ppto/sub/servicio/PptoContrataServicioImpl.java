@@ -2,6 +2,7 @@ package com.ppto.sub.servicio;
 
 import com.ppto.sub.dto.PptoContrataDto;
 import com.ppto.sub.entidad.PptoContrata;
+import com.ppto.sub.excepciones.ResourceNotFoundException;
 import com.ppto.sub.mapper.PptoContrataMapper;
 import com.ppto.sub.repositorio.PptoContrataRepositorio;
 import lombok.RequiredArgsConstructor;
@@ -62,6 +63,6 @@ public class PptoContrataServicioImpl implements PptoContrataServicio {
 
     private PptoContrata existsById(Long id){
         return pptoContrataRepositorio.findById(id)
-                .orElseThrow(()-> new RuntimeException("No existe el ppto con el ID: "+ id));
+                .orElseThrow(()-> new ResourceNotFoundException("No existe el ppto con el ID: "+ id));
     }
 }

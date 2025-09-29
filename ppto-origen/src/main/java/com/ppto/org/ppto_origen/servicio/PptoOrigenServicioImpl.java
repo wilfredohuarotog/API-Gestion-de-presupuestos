@@ -4,6 +4,7 @@ import com.ppto.org.ppto_origen.cliente.PptoContrataCliente;
 import com.ppto.org.ppto_origen.dto.PptoContrataDto;
 import com.ppto.org.ppto_origen.dto.PptoOrigenDto;
 import com.ppto.org.ppto_origen.entidad.PptoOrigen;
+import com.ppto.org.ppto_origen.excepciones.ResourceNotFoundException;
 import com.ppto.org.ppto_origen.mapper.PptoOrigenMapper;
 import com.ppto.org.ppto_origen.repositorio.PptoOrigenRepositorio;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -57,24 +58,13 @@ public class PptoOrigenServicioImpl implements PptoOrigenServicio{
 
     @Override
     public List<PptoContrataDto> findAllPptoContrataById(Long id) {
-
-//        List<PptoContrataDto> pptoContratas = webClient
-//                .get()
-//                .uri("/p-origen/{id}",id)
-//                .retrieve()
-//                .bodyToFlux(PptoContrataDto.class)
-//                .collectList()
-//                .block();
-
-        List<PptoContrataDto> pptoContratas = pptoContrataCliente.findAllPptoContrataById(id);
-
-        return pptoContratas;
+        return pptoContrataCliente.findAllPptoContrataById(id);
     }
 
 
     private PptoOrigen existsById(Long id){
         return pptoOrigenRepositorio.findById(id)
-                .orElseThrow(()-> new RuntimeException("No existe el ppto con el ID: "+ id));
+                .orElseThrow(()-> new ResourceNotFoundException("No existe el ppto con el ID: "+ id));
     }
 
 }
