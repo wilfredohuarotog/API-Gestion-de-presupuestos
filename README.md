@@ -22,22 +22,6 @@ Microservicios desarrollados con Spring Boot, Spring Data JPA y Spring Cloud, qu
 ## Arquitectura
 
 ```mermaid
-graph TD
-    user[👤 Usuario] --> gateway[🌐 API Gateway]
-
-    gateway --> contrata[📦 ppto_contrata]
-    gateway --> origen[📦 ppto_origen]
-
-    contrata --> mysql[(🗄️ MySQL DB)]
-    origen --> postgres[(🗄️ PostgreSQL DB)]
-    contrata --> config
-    origen --> config
-    eureka --> config
-    contrata --> eureka
-    origen --> eureka
-```
-
-```mermaid
 flowchart TD
     user([👤 Usuario]) --> gateway[🌐 API Gateway]
 
@@ -55,13 +39,12 @@ flowchart TD
 
     gateway --> contrata
     gateway --> origen
-    gateway --> eureka
-    gateway --> config
 
     contrata --> mysql
     origen --> postgres
     contrata --> config
     origen --> config
+    gatewat -->config
 ```
 
 ## Ejecución del proyecto
