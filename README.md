@@ -44,7 +44,7 @@ flowchart TD
     origen --> postgres
     contrata --> config
     origen --> config
-    gatewat -->config
+    gateway -->config
 ```
 
 ## Ejecución del proyecto
