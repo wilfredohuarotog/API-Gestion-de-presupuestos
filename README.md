@@ -19,15 +19,19 @@ Microservicios desarrollados con Spring Boot, Spring Data JPA y Spring Cloud, qu
 - Api Gateway para el enrutamiento de las solicitudes.
 - Patrón Cirkuit Break para mitigar fallas en la comunicación entre microservicios.
 
-flowchart TD
-    Client[Cliente / Postman] --> Gateway[API Gateway]
-    Gateway -->|Rutas| PptoContrata[Microservicio: ppto_contrata (MySQL)]
-    Gateway -->|Rutas| PptoOrigen[Microservicio: ppto_origen (PostgreSQL)]
-    Gateway --> Eureka[Eureka Server]
-    Gateway --> Config[Config Server]
+graph TD
+    user[👤 Usuario] --> gateway[🌐 API Gateway]
 
-    PptoContrata --> MySQL[(MySQL DB)]
-    PptoOrigen --> PostgreSQL[(PostgreSQL DB)]
+    gateway --> contrata[📦 ppto_contrata]
+    gateway --> origen[📦 ppto_origen]
+    gateway --> eureka[🔎 Eureka Server]
+    gateway --> config[⚙️ Config Server]
+
+    contrata --> mysql[(🗄️ MySQL DB)]
+    origen --> postgres[(🗄️ PostgreSQL DB)]
+    contrata --> config
+    origen --> config
+
 
 ## Ejecución del proyecto
 
