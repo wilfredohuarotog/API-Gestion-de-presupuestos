@@ -27,13 +27,12 @@ graph TD
 
     gateway --> contrata[📦 ppto_contrata]
     gateway --> origen[📦 ppto_origen]
-    gateway --> eureka[🔎 Eureka Server]
-    gateway --> config[⚙️ Config Server]
 
     contrata --> mysql[(🗄️ MySQL DB)]
     origen --> postgres[(🗄️ PostgreSQL DB)]
     contrata --> config
     origen --> config
+    eureka --> config
 ```
 
 
