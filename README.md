@@ -79,28 +79,40 @@ mvn spring-boot:run -pl eureka-server
 ```
 mvn spring-boot:run -pl gateway
 ```
-- Pptp-origen:
+- Ppto-origen:
 ```
 mvn spring-boot:run -pl ppto-origen
 ```
-- Pptp-contrata:
+- Ppto-contrata:
 ```
 mvn spring-boot:run -pl ppto-contrata
 ```
 
 ## Uso
 - Los microservicio ppto-origen y ppto-contrata permiten operaciones CRUD.
-
+- 
 ### Microservicio ppto-origen
 
 | Método | Endpoint                | Descripción                             |
-| ------ | ----------------------- | --------------------------------------- |
+| ------ | ----------------------- | --------------------------------------- |        
 | GET    | `/api/v1/p-origen`      | Obtener todos los presupuestos origen   |
 | GET    | `/api/v1/p-origen/{id}` | Obtener un presupuesto origen por ID    |
-| POST   | `/api/v1/p-origen`      | Crear un nuevo presupuesto origen       |
+| POST   | `/api/v1/p-origen`  | Crear un nuevo presupuesto origen       |
 | PUT    | `/api/v1/p-origen/{id}` | Actualizar un presupuesto origen por ID |
 | DELETE | `/api/v1/p-origen/{id}` | Eliminar un presupuesto origen por ID   |
-| GET    | `/api/v1/p-contrata/p-origen/{id}` | Obtener lista de pptos de la contrata que pertenecen a un ppto (origen) identificado por su ID:    |
+| GET    | `/api/v1/p-origen/p-contrata/{id}` | Obtener presupuestos de contrata asociados a un ppto origen  |
+
+### Microservicio ppto-contrata
+
+| Método | Endpoint                           | Descripción                                            |
+| ------ | ---------------------------------- | ------------------------------------------------------ |
+| GET    | `/api/v1/p-contrata`               | Obtener todos los presupuestos de contrata             |
+| GET    | `/api/v1/p-contrata/{id}`          | Obtener un presupuesto de contrata por ID              |
+| POST   | `/api/v1/p-contrata`               | Crear un nuevo presupuesto de contrata                 |
+| PUT    | `/api/v1/p-contrata/{id}`          | Actualizar un presupuesto de contrata por ID           |
+| DELETE | `/api/v1/p-contrata/{id}`          | Eliminar un presupuesto de contrata por ID             |
+| GET    | `/api/v1/p-contrata/p-origen/{id}` | Obtener presupuestos de contrata asociados a un ppto origen |
+
 
 ### Endpoint especial:
 - Obtener lista de pptos de la contrata que pertenecen a un ppto (origen) identificado por su ID: `GET http://localhost:8080/api/v1/p-contrata/p-origen/{id}`
