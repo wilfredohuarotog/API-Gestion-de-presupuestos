@@ -1,4 +1,4 @@
-# Microservicios para gestión de prespuestos
+# Microservicios para gestión de presupuestos
 
 Microservicios desarrollados con Spring Boot, Spring Data JPA y Spring Cloud, que permiten administrar presupuestos de proyectos. Incluye integración con MySQL y PostgreSQL, un Config Server, Eureka Server para descubrimiento de servicios, y un API Gateway para el enrutamiento de las rutas.
 
@@ -56,34 +56,35 @@ git clone https://github.com/wilfredohuarotog/Microservicios-Gestion-de-presupue
 ```
 ### 2. Ingresar al directorio
 ```
-cd clientes
+cd Microservicios-Gestion-de-presupuestos
 ```
-### 3. Configuración de variables de entorno del application.properties
-```
-spring.datasource.url=${DB_URL}
-spring.datasource.username=${DB_USER}
-spring.datasource.password=${DB_PASSWORD}
-```
-### 4. Ejecutar 
-```
-mvn spring-boot:run
-```
-### 5. Accede a la documentación
-`Documentación`: http://localhost:8080/swagger-ui.html.
+### 4. Ejecutar para cada microservicio:
 
-## Despliegue en docker
-### 1. Generar las imagenes y levantar el servicios del docker-compose.yml
+- Config-server:
 ```
-docker compose up -build -d
+mvn spring-boot:run -pl config-server
 ```
-### 2. Detener la ejecución
+- Eureka-server:
 ```
-docker compose down
+mvn spring-boot:run -pl eureka-server
 ```
+- Api-gateway:
+```
+mvn spring-boot:run -pl gateway
+```
+- Pptp-origen:
+```
+mvn spring-boot:run -pl ppto-origen
+```
+- Pptp-contrata:
+```
+mvn spring-boot:run -pl ppto-contrata
+```
+
 ## Uso
-### Endpoints
-- Obtener lista de clientes: `GET http://localhost:8080/api/v1/clientes`
-- Obtener cliente por ID: `GET http://localhost:8080/api/v1/clientes/{id}`
-- Guardar/crear un cliente: `POST http://localhost:8080/api/v1/clientes`
-- Actualizar datos de un cliente por su ID: `PUT http://localhost:8080/api/v1/clientes/{id}`
-- Eliminar un cliente por su ID: `DELETE http://localhost:8080/api/v1/clientes/{id}`
+- Tanto para el microservicio ppto-origen y ppto-contrata se puede hacer la consultas CRUD.
+### Endpoint especial:
+- Obtener lista de pptos de la contrata que pertenecen a un ppto (origen) identificado por su ID: `GET http://localhost:8080/api/v1/p-contrata/p-origen/{id}`
+
+### Documentación
+`Documentación de endpoints, accedes:` https://documenter.getpostman.com/view/46041910/2sB3QFRCPr
