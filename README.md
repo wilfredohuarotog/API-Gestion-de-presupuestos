@@ -95,23 +95,23 @@ mvn spring-boot:run -pl ppto-contrata
 
 | Método | Endpoint                | Descripción                             |
 | ------ | ----------------------- | --------------------------------------- |        
-| GET    | `/api/v1/p-origen`      | Obtener todos los presupuestos origen   |
-| GET    | `/api/v1/p-origen/{id}` | Obtener un presupuesto origen por ID    |
-| POST   | `/api/v1/p-origen`      | Crear un nuevo presupuesto origen       |
-| PUT    | `/api/v1/p-origen/{id}` | Actualizar un presupuesto origen por ID |
-| DELETE | `/api/v1/p-origen/{id}` | Eliminar un presupuesto origen por ID   |
-| GET    | `/api/v1/p-origen/p-contrata/{id}` | Obtener presupuestos de contrata asociados a un ppto origen  |
+| GET    | `/api/v1/p-origen`      | Obtener todos los pptos origen   |
+| GET    | `/api/v1/p-origen/{id}` | Obtener un ppto origen por ID    |
+| POST   | `/api/v1/p-origen`      | Crear un nuevo ppto origen       |
+| PUT    | `/api/v1/p-origen/{id}` | Actualizar un ppto origen por ID |
+| DELETE | `/api/v1/p-origen/{id}` | Eliminar un ppto origen por ID   |
+| GET    | `/api/v1/p-origen/p-contrata/{id}` | Obtener pptos de contrata asociados a un ppto origen  |
 
 ### Microservicio ppto-contrata
 
 | Método | Endpoint                           | Descripción                                            |
 | ------ | ---------------------------------- | ------------------------------------------------------ |
-| GET    | `/api/v1/p-contrata`               | Obtener todos los presupuestos de contrata             |
-| GET    | `/api/v1/p-contrata/{id}`          | Obtener un presupuesto de contrata por ID              |
-| POST   | `/api/v1/p-contrata`               | Crear un nuevo presupuesto de contrata                 |
-| PUT    | `/api/v1/p-contrata/{id}`          | Actualizar un presupuesto de contrata por ID           |
-| DELETE | `/api/v1/p-contrata/{id}`          | Eliminar un presupuesto de contrata por ID             |
-| GET    | `/api/v1/p-contrata/p-origen/{id}` | Obtener presupuestos de contrata asociados a un ppto origen |
+| GET    | `/api/v1/p-contrata`               | Obtener todos los pptos de contrata             |
+| GET    | `/api/v1/p-contrata/{id}`          | Obtener un ppto de contrata por ID              |
+| POST   | `/api/v1/p-contrata`               | Crear un nuevo ppto de contrata                 |
+| PUT    | `/api/v1/p-contrata/{id}`          | Actualizar un ppto de contrata por ID           |
+| DELETE | `/api/v1/p-contrata/{id}`          | Eliminar un ppto de contrata por ID             |
+| GET    | `/api/v1/p-contrata/p-origen/{id}` | Obtener pptos de contrata asociados a un ppto origen |
 
 ### Documentación
 `Acceder:` [Documentación en Postman](https://documenter.getpostman.com/view/46041910/2sB3QFRCPr)
