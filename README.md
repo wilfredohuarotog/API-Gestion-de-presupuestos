@@ -51,8 +51,8 @@ flowchart TD
 ## Ejecución del proyecto
 
 ### 1. Clonar el repositorio
-```
-git clone [https://github.com/wilfredohuarotog/API-RESTful.git](https://github.com/wilfredohuarotog/Microservicios-Gestion-de-presupuestos.git)
+```bash
+git clone https://github.com/wilfredohuarotog/Microservicios-Gestion-de-presupuestos.git
 ```
 ### 2. Ingresar al directorio
 ```
