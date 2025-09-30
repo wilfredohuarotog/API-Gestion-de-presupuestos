@@ -90,8 +90,22 @@ mvn spring-boot:run -pl ppto-contrata
 
 ## Uso
 - Los microservicio ppto-origen y ppto-contrata permiten operaciones CRUD.
+
+### Microservicio ppto-origen
+
+| Método | Endpoint                | Descripción                             |
+| ------ | ----------------------- | --------------------------------------- |
+| GET    | `/api/v1/p-origen`      | Obtener todos los presupuestos origen   |
+| GET    | `/api/v1/p-origen/{id}` | Obtener un presupuesto origen por ID    |
+| POST   | `/api/v1/p-origen`      | Crear un nuevo presupuesto origen       |
+| PUT    | `/api/v1/p-origen/{id}` | Actualizar un presupuesto origen por ID |
+| DELETE | `/api/v1/p-origen/{id}` | Eliminar un presupuesto origen por ID   |
+| GET    | `/api/v1/p-contrata/p-origen/{id}` | Obtener lista de pptos de la contrata que pertenecen a un ppto (origen) identificado por su ID:    |
+
 ### Endpoint especial:
 - Obtener lista de pptos de la contrata que pertenecen a un ppto (origen) identificado por su ID: `GET http://localhost:8080/api/v1/p-contrata/p-origen/{id}`
 
 ### Documentación
-`Documentación de endpoints disponible en Postman:` [Docuemntación en Postman](https://documenter.getpostman.com/view/46041910/2sB3QFRCPr)
+`Acceder:` [Documentación en Postman](https://documenter.getpostman.com/view/46041910/2sB3QFRCPr)
+
+
