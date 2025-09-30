@@ -90,14 +90,14 @@ mvn spring-boot:run -pl ppto-contrata
 
 ## Uso
 - Los microservicio ppto-origen y ppto-contrata permiten operaciones CRUD.
-- 
+- Todos los endpoints de los microservicios se consumen a través del Gateway `http://localhost:8080`.
 ### Microservicio ppto-origen
 
 | Método | Endpoint                | Descripción                             |
 | ------ | ----------------------- | --------------------------------------- |        
 | GET    | `/api/v1/p-origen`      | Obtener todos los presupuestos origen   |
 | GET    | `/api/v1/p-origen/{id}` | Obtener un presupuesto origen por ID    |
-| POST   | `/api/v1/p-origen`  | Crear un nuevo presupuesto origen       |
+| POST   | `/api/v1/p-origen`      | Crear un nuevo presupuesto origen       |
 | PUT    | `/api/v1/p-origen/{id}` | Actualizar un presupuesto origen por ID |
 | DELETE | `/api/v1/p-origen/{id}` | Eliminar un presupuesto origen por ID   |
 | GET    | `/api/v1/p-origen/p-contrata/{id}` | Obtener presupuestos de contrata asociados a un ppto origen  |
@@ -112,10 +112,6 @@ mvn spring-boot:run -pl ppto-contrata
 | PUT    | `/api/v1/p-contrata/{id}`          | Actualizar un presupuesto de contrata por ID           |
 | DELETE | `/api/v1/p-contrata/{id}`          | Eliminar un presupuesto de contrata por ID             |
 | GET    | `/api/v1/p-contrata/p-origen/{id}` | Obtener presupuestos de contrata asociados a un ppto origen |
-
-
-### Endpoint especial:
-- Obtener lista de pptos de la contrata que pertenecen a un ppto (origen) identificado por su ID: `GET http://localhost:8080/api/v1/p-contrata/p-origen/{id}`
 
 ### Documentación
 `Acceder:` [Documentación en Postman](https://documenter.getpostman.com/view/46041910/2sB3QFRCPr)
